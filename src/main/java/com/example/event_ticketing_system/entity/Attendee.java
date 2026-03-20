@@ -5,20 +5,26 @@ import lombok.Data;
 
 import java.util.List;
 
+// Attendee Entity: a person who registers on the platform and books tickets to events
 @Entity
-@Table(name="Attendee")
+@Table(name= "attendee")
 @Data
 public class Attendee {
+    // Primary key for the attendee table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer attendee_id;
+    @Column(name = "attendee_id")
+    private Integer attendeeId;
 
+    // Full name of the attendee
     @Column(nullable = false)
     private String name;
 
+    // Unique email address used for identification and booking lookups
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "attendee", cascade = CascadeType.ALL)
+    // One attendee can have many bookings
+    @OneToMany(mappedBy = "attendee")
     private List<Booking> bookings;
 }
