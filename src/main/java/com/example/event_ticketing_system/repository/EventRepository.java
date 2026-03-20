@@ -1,13 +1,13 @@
 package com.example.event_ticketing_system.repository;
 
 import com.example.event_ticketing_system.entity.Event;
+import com.example.event_ticketing_system.entity.EventStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+// Repository for Event entity
 public interface EventRepository extends JpaRepository<Event, Integer> {
-    // List all upcoming events
-    List<Event> findByStatus(String status);
+    // List all events with a given status (UPCOMING, ONGOING, CANCELLED, COMPLETED)
+    List<Event> findByStatus(EventStatus status);
 }
