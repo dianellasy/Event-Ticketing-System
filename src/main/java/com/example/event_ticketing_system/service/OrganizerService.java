@@ -1,0 +1,19 @@
+package com.example.event_ticketing_system.service;
+ 
+import com.example.event_ticketing_system.entity.Organizer;
+import com.example.event_ticketing_system.repository.OrganizerRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+ 
+@Service
+@RequiredArgsConstructor
+public class OrganizerService {
+ 
+    private final OrganizerRepository organizerRepository;
+ 
+    @Transactional
+    public Organizer createOrganizer(Organizer organizer) {
+        return organizerRepository.save(organizer);
+    }
+}
