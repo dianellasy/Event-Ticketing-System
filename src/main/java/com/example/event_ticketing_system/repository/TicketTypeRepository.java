@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TicketTypeRepository extends JpaRepository<TicketType, Integer> {
     // Get all ticket types for a specific event
-    List<TicketType> findByEventId(Integer eventId);
+    List<TicketType> findByEventEventId(Integer eventId);
 }

@@ -6,6 +6,8 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.event_ticketing_system.enums.EventStatus;
+
 // Event Entity: the core entity of the system
 // An event is created by one Organizer and held at one Venue
 @Entity

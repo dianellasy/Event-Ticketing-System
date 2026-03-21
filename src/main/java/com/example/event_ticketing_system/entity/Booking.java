@@ -3,6 +3,7 @@ package com.example.event_ticketing_system.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
+import com.example.event_ticketing_system.enums.PaymentStatus;
 
 // Booking (Junction Table): the junction table between Attendee and TicketType
 // Represents the act of an attendee booking a specific ticket type

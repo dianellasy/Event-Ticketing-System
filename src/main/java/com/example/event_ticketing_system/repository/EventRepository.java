@@ -1,7 +1,7 @@
 package com.example.event_ticketing_system.repository;
 
 import com.example.event_ticketing_system.entity.Event;
-import com.example.event_ticketing_system.entity.EventStatus;
+import com.example.event_ticketing_system.enums.EventStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
