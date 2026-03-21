@@ -1,6 +1,6 @@
 package com.example.event_ticketing_system.dto;
 
-import com.example.event_ticketing_system.entity.PaymentStatus;
+import com.example.event_ticketing_system.enums.PaymentStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;

@@ -1,6 +1,6 @@
 package com.example.event_ticketing_system.dto;
 
-import com.example.event_ticketing_system.entity.EventStatus;
+import com.example.event_ticketing_system.enums.EventStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;
