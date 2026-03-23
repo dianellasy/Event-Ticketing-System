@@ -12,8 +12,10 @@ import com.example.event_ticketing_system.repository.BookingRepository;
 import com.example.event_ticketing_system.repository.EventRepository;
 import com.example.event_ticketing_system.repository.TicketTypeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -99,7 +101,7 @@ public class BookingService {
     // GET /api/attendees/{id}/bookings
     public AttendeeBookingsDTO getBookingsByAttendee(Integer attendeeId) {
         Attendee attendee = attendeeRepository.findById(attendeeId)
-                .orElseThrow(() -> new RuntimeException("Attendee not found with id: " + attendeeId));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Attendee not found with id: " + attendeeId));
 
         List<BookingResponseDTO> bookingDTOs = bookingRepository
                 .findByAttendeeAttendeeId(attendeeId)
@@ -118,7 +120,7 @@ public class BookingService {
     public RevenueDTO getRevenueByEvent(Integer eventId) {
         // Verify event exists
         String eventTitle = eventRepository.findById(eventId)
-                .orElseThrow(() -> new RuntimeException("Event not found with id: " + eventId))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found with id: " + eventId))
                 .getTitle();
 
         Double revenue = bookingRepository.calculateRevenueByEventId(eventId, PaymentStatus.CONFIRMED);

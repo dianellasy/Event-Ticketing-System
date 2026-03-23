@@ -11,8 +11,10 @@ import com.example.event_ticketing_system.repository.EventRepository;
 import com.example.event_ticketing_system.repository.OrganizerRepository;
 import com.example.event_ticketing_system.repository.VenueRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,7 +55,7 @@ public class EventService {
 
     public EventResponseDTO getEventById(Integer id) {
         Event event = eventRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Event not found with id: " + id));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found with id: " + id));
         return toDTO(event);
     }
 
