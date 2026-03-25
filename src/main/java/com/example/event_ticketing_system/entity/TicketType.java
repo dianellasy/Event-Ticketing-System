@@ -27,6 +27,7 @@ public class TicketType {
     private Double price;
 
     // Remaining number of tickets available
+    @PositiveOrZero(message = "Quantity cannot be negative")
     @Column(name = "quantity_available")
     private Integer quantityAvailable;
 

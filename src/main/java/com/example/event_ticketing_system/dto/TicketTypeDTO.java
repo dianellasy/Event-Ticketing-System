@@ -17,5 +17,6 @@ public class TicketTypeDTO {
     private Double price;
 
     // Remaining number of tickets available
+    @PositiveOrZero
     private Integer quantityAvailable;
 }
