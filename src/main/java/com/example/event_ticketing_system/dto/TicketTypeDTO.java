@@ -1,5 +1,6 @@
 package com.example.event_ticketing_system.dto;
 
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 // DTO representing a ticket tier for an event
@@ -12,6 +13,7 @@ public class TicketTypeDTO {
     private String name;
 
     // Price, in USD, of the ticket (must be >= 0)
+    @PositiveOrZero
     private Double price;
 
     // Remaining number of tickets available

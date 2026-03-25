@@ -9,11 +9,11 @@ public class AttendeeDTO {
     // Unique identifier for the attendee
     private Integer attendeeId;
 
-    @NotBlank
     // Full name of the attendee
+    @NotBlank
     private String name;
 
-    @NotBlank
     // Email address used for identification and booking lookups
+    @NotBlank
     private String email;
 }

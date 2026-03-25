@@ -3,6 +3,7 @@ package com.example.event_ticketing_system.controller;
 import com.example.event_ticketing_system.dto.TicketTypeDTO;
 import com.example.event_ticketing_system.entity.TicketType;
 import com.example.event_ticketing_system.service.TicketTypeService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class TicketTypeController {
     // POST /api/ticket-types?eventId=1
     @PostMapping
     public ResponseEntity<TicketTypeDTO> createTicketType(
-            @RequestBody TicketType ticketType,
+            @Valid @RequestBody TicketType ticketType,
             @RequestParam Integer eventId) {
         TicketTypeDTO created = ticketTypeService.createTicketType(ticketType, eventId);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);

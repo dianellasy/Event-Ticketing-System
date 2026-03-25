@@ -5,6 +5,7 @@ import com.example.event_ticketing_system.dto.RevenueDTO;
 import com.example.event_ticketing_system.entity.Event;
 import com.example.event_ticketing_system.service.BookingService;
 import com.example.event_ticketing_system.service.EventService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class EventController {
     // POST /api/events
     @PostMapping
     public ResponseEntity<EventResponseDTO> createEvent(
-            @RequestBody Event event,
+            @Valid @RequestBody Event event,
             @RequestParam Integer organizerId,
             @RequestParam Integer venueId) {
         EventResponseDTO created = eventService.createEvent(event, organizerId, venueId);

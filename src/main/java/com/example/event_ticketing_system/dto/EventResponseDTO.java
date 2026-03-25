@@ -1,6 +1,7 @@
 package com.example.event_ticketing_system.dto;
 
 import com.example.event_ticketing_system.enums.EventStatus;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,12 +14,14 @@ public class EventResponseDTO {
     private Integer eventId;
 
     // Title of the event
+    @NotBlank
     private String title;
 
     // Optional description of the event
     private String description;
 
     // Date and time when the event occurs
+    @NotBlank
     private LocalDateTime eventDate;
 
     // Status of the event (UPCOMING, ONGOING, CANCELLED, COMPLETED)

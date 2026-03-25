@@ -1,6 +1,7 @@
 package com.example.event_ticketing_system.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class TicketType {
     private String name;
 
     // Price, in USD, of the ticket (must be >= 0)
+    @PositiveOrZero(message = "Price cannot be negative")
     @Column(nullable = false)
     private Double price;
 

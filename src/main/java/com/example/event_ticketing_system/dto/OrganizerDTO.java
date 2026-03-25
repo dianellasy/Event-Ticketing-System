@@ -1,5 +1,6 @@
 package com.example.event_ticketing_system.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 // DTO representing organizer information returned to the client
@@ -9,9 +10,11 @@ public class OrganizerDTO {
     private Integer organizerId;
 
     // Full name or company name
+    @NotBlank
     private String name;
 
     // Contact email for organizer identification
+    @NotBlank
     private String email;
 
     // Contact phone number
