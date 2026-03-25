@@ -25,25 +25,25 @@ This project demonstrates full 3-layer Spring Boot architecture, JPA entity rela
 ### Create a new ticket type:
 ![POST api/ticket-types](screenshots/POST_ticket-types.png)
 
-### Create a new attendee:
-![POST api/attendees](screenshots/POST_attendees.png)
-
-### Create a new booking:
-![POST api/bookings](screenshots/POST_bookings.png)
-
-### List all events:
+### List all upcoming events:
 ![GET api/events](screenshots/GET_events.png)
 
-### Get a specific event:
+### Get event details with ticket types:
 ![GET api/events/{id}](screenshots/GET_events_id.png)
+
+### Register a new attendee:
+![POST api/attendees](screenshots/POST_attendees.png)
+
+### Book a ticket:
+![POST api/bookings](screenshots/POST_bookings.png)
 
 ### Cancel a booking:
 ![PUT api/bookings/{id}/cancel](screenshots/PUT_bookings.png)
 
-### Get event revenue:
+### Get total revenue for an event:
 ![GET api/events/{id}/revenue](screenshots/GET_events_id_revenue.png)
 
-### List all events:
+### Get all bookings for an attendee events:
 ![GET api/attendees/{id}/bookings](screenshots/GET_attendees_id_bookings.png)
 
 ## Documentation of the API
