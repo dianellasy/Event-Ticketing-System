@@ -11,6 +11,7 @@ This project demonstrates full 3-layer Spring Boot architecture, JPA entity rela
 | Siddharth Vasu       |    885505578     |
 
 ## Demo Video
+[Event Ticketing System Demo](https://youtu.be/O6TudH5nNO4?si=AA0wrXAws0kTBgr2)
 
 ## Postman Screenshots
 ### Create a new organizer:
