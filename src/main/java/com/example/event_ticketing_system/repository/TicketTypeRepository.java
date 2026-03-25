@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TicketTypeRepository extends JpaRepository<TicketType, Integer> {
-    // Get event details with ticket type
-    List<TicketType> findByEvent_id(Integer event_id);
+    // Get all ticket types for a specific event
+    List<TicketType> findByEventEventId(Integer eventId);
 }
