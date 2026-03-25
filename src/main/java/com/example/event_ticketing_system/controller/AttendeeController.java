@@ -5,6 +5,7 @@ import com.example.event_ticketing_system.dto.AttendeeDTO;
 import com.example.event_ticketing_system.entity.Attendee;
 import com.example.event_ticketing_system.service.AttendeeService;
 import com.example.event_ticketing_system.service.BookingService;
+import jakarta.validation.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class AttendeeController {
 
     // POST /api/attendees
     @PostMapping
-    public ResponseEntity<AttendeeDTO> createAttendee(@RequestBody Attendee attendee) {
+    public ResponseEntity<AttendeeDTO> createAttendee(@Valid @RequestBody Attendee attendee) {
         AttendeeDTO created = attendeeService.createAttendee(attendee);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
