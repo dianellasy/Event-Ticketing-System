@@ -13,7 +13,6 @@ This project demonstrates full 3-layer Spring Boot architecture, JPA entity rela
 ## Demo Video
 
 ## Postman Screenshots
-## Postman Screenshots
 ### Create a new organizer:
 ![POST api/organizers](screenshots/POST_organizers.png)
 
